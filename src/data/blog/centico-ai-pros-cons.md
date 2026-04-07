@@ -1,6 +1,6 @@
 ---
 author: Valerii Fedorovych
-pubDatetime: 2026-04-07T10:35:00Z
+pubDatetime: 2026-04-07T08:00:00Z
 title: "Pros and Cons of Using Centico AI"
 slug: centico-ai-pros-cons
 featured: true
