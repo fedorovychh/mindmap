@@ -3,7 +3,7 @@ export const SITE = {
   author: "Valerii Fedorovych",
   profile: "https://satnaing.dev/",
   desc: "Valerii Fedorovych`s blog.",
-  title: "Fedorovych Mindmap",
+  title: "Mindmap",
   ogImage: "astropaper-og.jpg",
   lightAndDarkMode: true,
   postPerIndex: 4,

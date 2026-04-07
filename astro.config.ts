@@ -17,7 +17,7 @@ export default defineConfig({
   base: "/mindmap",
   integrations: [
     sitemap({
-      filter: page => SITE.showArchives || !page.endsWith("/archives"),
+      filter: page => SITE.showArchives || !page.endsWith("/mindmap/archives"),
     }),
   ],
   markdown: {

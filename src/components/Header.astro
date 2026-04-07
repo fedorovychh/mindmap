@@ -13,12 +13,14 @@ const { pathname } = Astro.url;
 // Remove trailing slash from current pathname if exists
 const currentPath =
   pathname.endsWith("/") && pathname !== "/" ? pathname.slice(0, -1) : pathname;
-
 const isActive = (path: string) => {
   const currentPathArray = currentPath.split("/").filter(p => p.trim());
   const pathArray = path.split("/").filter(p => p.trim());
 
-  return currentPath === path || currentPathArray[0] === pathArray[0];
+  const currentSection = currentPathArray[1];
+  const pathSection = pathArray[1];
+
+  return currentPath === path || (currentSection === pathSection && currentSection !== undefined);
 };
 ---
 
@@ -43,7 +45,7 @@ const isActive = (path: string) => {
     ]}
   >
     <a
-      href="/"
+      href="/mindmap/"
       class="absolute py-1 text-xl leading-8 font-semibold whitespace-nowrap sm:static sm:my-auto sm:text-2xl sm:leading-none"
     >
       {SITE.title}
@@ -72,12 +74,12 @@ const isActive = (path: string) => {
         ]}
       >
         <li class="col-span-2">
-          <a href="/posts" class:list={{ "active-nav": isActive("/posts") }}>
+          <a href="/mindmap/posts" class:list={{ "active-nav": isActive("/mindmap/posts") }}>
             Posts
           </a>
         </li>
         <li class="col-span-2">
-          <a href="/tags" class:list={{ "active-nav": isActive("/tags") }}>
+          <a href="/mindmap/tags" class:list={{ "active-nav": isActive("/mindmap/tags") }}>
             Tags
           </a>
         </li>
@@ -86,11 +88,11 @@ const isActive = (path: string) => {
           SITE.showArchives && (
             <li class="col-span-2">
               <LinkButton
-                href="/archives"
+                href="/mindmap/archives"
                 class:list={[
                   "focus-outline flex justify-center p-3 sm:p-1",
                   {
-                    "active-nav [&>svg]:stroke-accent": isActive("/archives"),
+                    "active-nav [&>svg]:stroke-accent": isActive("/mindmap/archives"),
                   },
                 ]}
                 title="Archives"
@@ -104,10 +106,10 @@ const isActive = (path: string) => {
         }
         <li class="col-span-1 flex items-center justify-center">
           <LinkButton
-            href="/search"
+            href="/mindmap/search"
             class:list={[
               "focus-outline flex p-3 sm:p-1",
-              { "[&>svg]:stroke-accent": isActive("/search") },
+              { "[&>svg]:stroke-accent": isActive("/mindmap/search") },
             ]}
             title="Search"
             aria-label="search"
