@@ -2,7 +2,7 @@
 author: Valerii Fedorovych
 pubDatetime: 2026-05-12T08:00:00Z
 title: "Pros and Cons of Using Centico AI"
-slug: centico-ai-pros-cons
+slug: vibecoding-manifest
 featured: true
 draft: false
 tags:
